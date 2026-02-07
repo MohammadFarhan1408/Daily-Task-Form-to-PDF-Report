@@ -19,7 +19,6 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
       <div className="header">
         <h3 className="title">Objectives</h3>
       </div>
-
       <form
         className="py-4 space-y-6"
         onSubmit={(e) => {
@@ -28,7 +27,6 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
         }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Primary Objectives */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="primaryObjectives">
               Primary Objectives
@@ -40,13 +38,12 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateObjectives("primaryObjectives", e.target.value)
               }
+              maxLength={250}
               required
               className="inputClass resize-none"
               placeholder="Enter primary objectives..."
             />
           </div>
-
-          {/* Secondary Objectives */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="secondaryObjectives">
               Secondary Objectives
@@ -58,13 +55,12 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateObjectives("secondaryObjectives", e.target.value)
               }
+              maxLength={250}
               required
               className="inputClass resize-none"
               placeholder="Enter secondary objectives..."
             />
           </div>
-
-          {/* Short Term Outcomes */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="shortTermOutcomes">
               Short-term Outcomes
@@ -76,6 +72,7 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateObjectives("shortTermOutcomes", e.target.value)
               }
+              maxLength={190}
               required
               className="inputClass resize-none"
               placeholder="Describe short-term outcomes..."
@@ -94,6 +91,7 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateObjectives("longTermOutcomes", e.target.value)
               }
+              maxLength={190}
               required
               className="inputClass resize-none"
               placeholder="Describe long-term outcomes..."
@@ -105,13 +103,14 @@ const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
             <label className="labelClass" htmlFor="sdgAlignment">
               SDG Alignment
             </label>
-            <textarea
+            <input
+              type="text"
               id="sdgAlignment"
-              rows="2"
               value={sdgAlignment}
               onChange={(e) => updateObjectives("sdgAlignment", e.target.value)}
               required
-              className="inputClass resize-none"
+              maxLength={100}
+              className="inputClass"
               placeholder="e.g. SDG 4 – Quality Education"
             />
           </div>

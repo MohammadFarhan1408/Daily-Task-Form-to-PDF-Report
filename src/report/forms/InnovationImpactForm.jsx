@@ -30,7 +30,6 @@ const InnovationImpactForm = ({
         }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* New Technologies */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="newTechnologies">
               New Technologies Introduced
@@ -42,13 +41,13 @@ const InnovationImpactForm = ({
               onChange={(e) =>
                 updateInnovationImpact("newTechnologies", e.target.value)
               }
+              maxLength={200}
               required
               className="inputClass resize-none"
               placeholder="Describe new technologies..."
             />
           </div>
 
-          {/* Innovation Projects */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="innovationProjects">
               Innovation Projects
@@ -60,13 +59,13 @@ const InnovationImpactForm = ({
               onChange={(e) =>
                 updateInnovationImpact("innovationProjects", e.target.value)
               }
+              maxLength={200}
               required
               className="inputClass resize-none"
               placeholder="Describe innovation projects..."
             />
           </div>
 
-          {/* Research */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="research">
               Research & Development
@@ -78,6 +77,7 @@ const InnovationImpactForm = ({
               onChange={(e) =>
                 updateInnovationImpact("research", e.target.value)
               }
+              maxLength={200}
               required
               className="inputClass resize-none"
               placeholder="Describe research activities..."

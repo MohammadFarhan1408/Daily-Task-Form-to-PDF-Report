@@ -13,24 +13,15 @@ export const MonitoringEvaluationPage = () => {
     <Page size="A4" style={styles.page}>
       <PDFHeader title="Monitoring & Evaluation Methodology" />
 
-      <View style={styles.introContainer}>
+      {/* <View style={styles.introContainer}>
         <Text style={styles.introText}>
           To ensure transparency and measurable progress, a structured
           Monitoring and Evaluation (M&E) framework was implemented throughout
           the project lifecycle.
         </Text>
-      </View>
+      </View> */}
 
       <View style={styles.methodologyGrid}>
-        {/* Frequency Highlight */}
-        <View style={styles.frequencyBox}>
-          <Text style={styles.frequencyLabel}>MONITORING FREQUENCY</Text>
-          <Text style={styles.frequencyValue}>
-            {monitoringFrequency ||
-              "Regular periodic assessments performed throughout the project duration."}
-          </Text>
-        </View>
-
         {/* Data Collection Tools */}
         <View style={styles.methodCard}>
           <View style={styles.cardHeaderRow}>
@@ -56,13 +47,22 @@ export const MonitoringEvaluationPage = () => {
         </View>
       </View>
 
-      <View style={styles.complianceNote}>
+      {/* Frequency Highlight */}
+      <View style={styles.frequencyBox}>
+        <Text style={styles.frequencyLabel}>MONITORING FREQUENCY</Text>
+        <Text style={styles.frequencyValue}>
+          {monitoringFrequency ||
+            "Regular periodic assessments performed throughout the project duration."}
+        </Text>
+      </View>
+
+      {/* <View style={styles.complianceNote}>
         <Text style={styles.complianceText}>
           * All data collection processes adhere to privacy standards and focus
           on tracking learning outcomes, attendance, and behavioral changes as
           per NEP 2020 guidelines.
         </Text>
-      </View>
+      </View> */}
 
       <PDFFooter />
     </Page>

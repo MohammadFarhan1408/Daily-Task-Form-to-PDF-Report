@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
   methodologyGrid: {
     flexDirection: "column",
     gap: 15,
+    marginBottom: 15,
   },
   frequencyBox: {
     backgroundColor: "#f8fafc",

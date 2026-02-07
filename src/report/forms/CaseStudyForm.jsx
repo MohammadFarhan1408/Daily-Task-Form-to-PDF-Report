@@ -39,6 +39,7 @@ const CaseStudyForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateCaseStudy("beneficiaryBackground", e.target.value)
               }
               required
+              maxLength={225}
               className="inputClass resize-none"
               placeholder="Enter beneficiary background..."
             />
@@ -57,6 +58,7 @@ const CaseStudyForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateCaseStudy("interventionDetails", e.target.value)
               }
               required
+              maxLength={225}
               className="inputClass resize-none"
               placeholder="Describe intervention..."
             />
@@ -75,6 +77,7 @@ const CaseStudyForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateCaseStudy("outcomeAchieved", e.target.value)
               }
               required
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Enter outcomes..."
             />
@@ -91,6 +94,7 @@ const CaseStudyForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               value={testimonial}
               onChange={(e) => updateCaseStudy("testimonial", e.target.value)}
               required
+              maxLength={250}
               className="inputClass resize-none"
               placeholder="Enter testimonial..."
             />

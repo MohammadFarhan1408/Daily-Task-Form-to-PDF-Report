@@ -36,15 +36,16 @@ const LearningOutcomesForm = ({
             <label className="labelClass" htmlFor="technicalSkillsGained">
               Technical Skills Gained
             </label>
-            <textarea
-              rows="3"
+            <input
+              type="text"
+              maxLength={100}
               id="technicalSkillsGained"
               value={technicalSkillsGained}
               onChange={(e) =>
                 updateLearningOutcomes("technicalSkillsGained", e.target.value)
               }
               required
-              className="inputClass resize-none"
+              className="inputClass"
               placeholder="e.g. Robotics, Augmented Reality, Python Programming..."
             />
           </div>
@@ -53,19 +54,19 @@ const LearningOutcomesForm = ({
             <label className="labelClass" htmlFor="softSkillsDeveloped">
               Soft Skills Developed
             </label>
-            <textarea
-              rows="3"
+            <input
+              type="text"
+              maxLength={100}
               id="softSkillsDeveloped"
               value={softSkillsDeveloped}
               onChange={(e) =>
                 updateLearningOutcomes("softSkillsDeveloped", e.target.value)
               }
               required
-              className="inputClass resize-none"
+              className="inputClass"
               placeholder="e.g. Critical Thinking, Teamwork, Problem Solving..."
             />
           </div>
-
           <div className="md:col-span-1">
             <label className="labelClass" htmlFor="toolsPlatformsUsed">
               Tools / Platforms Used
@@ -78,11 +79,11 @@ const LearningOutcomesForm = ({
                 updateLearningOutcomes("toolsPlatformsUsed", e.target.value)
               }
               required
+              maxLength={80}
               className="inputClass"
               placeholder="e.g. AR-based Phygital toys, STEM Kits"
             />
           </div>
-
           <div className="md:col-span-1">
             <label className="labelClass" htmlFor="handsOnLearningHours">
               Hands-on Learning Hours
@@ -95,8 +96,8 @@ const LearningOutcomesForm = ({
                 updateLearningOutcomes("handsOnLearningHours", e.target.value)
               }
               required
+              min={1}
               className="inputClass"
-              placeholder="e.g. 40+ Hours"
             />
           </div>
         </div>

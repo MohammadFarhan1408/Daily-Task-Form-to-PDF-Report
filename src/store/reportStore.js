@@ -61,7 +61,7 @@ export const useReportStore = create((set) => ({
     leadershipSkills: "",
     teamwork: "",
     criticalThinking: "",
-    testimonials: [],
+    testimonials: "",
   },
 
   learningOutcomes: {

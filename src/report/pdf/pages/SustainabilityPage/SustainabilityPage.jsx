@@ -52,22 +52,26 @@ export const SustainabilityPage = () => {
             />
             <Text style={styles.sectionLabel}>REPLICATION POSSIBILITIES</Text>
           </View>
-          <View style={styles.replicationBox}>
+          <Text style={styles.bodyText}>
+            {replicationPossibilities ||
+              "This phygital learning model can be replicated across other government and private schools to bridge the digital divide."}
+          </Text>
+          {/* <View style={styles.replicationBox}>
             <Text style={styles.replicationText}>
               {replicationPossibilities ||
                 "This phygital learning model can be replicated across other government and private schools to bridge the digital divide."}
             </Text>
-          </View>
+          </View> */}
         </View>
       </View>
 
-      <View style={styles.visionNote}>
+      {/* <View style={styles.visionNote}>
         <Text style={styles.visionText}>
           Aligned with NEP 2020, these measures ensure that the technological
           infrastructure serves as a permanent catalyst for innovation in the
           local community.
         </Text>
-      </View>
+      </View> */}
 
       <PDFFooter />
     </Page>

@@ -45,6 +45,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateProjectOverview("projectTitle", e.target.value)
               }
               className="inputClass"
+              maxLength={60}
               required
               placeholder="Enter a descriptive project name"
             />
@@ -63,6 +64,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                   e.target.value,
                 )
               }
+              maxLength={40}
               className="inputClass"
               required
             />
@@ -78,6 +80,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateProjectOverview("partnerSponsor", e.target.value)
               }
+              maxLength={40}
               className="inputClass"
               required
             />
@@ -90,6 +93,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               type="number"
               id="projectDuration"
               value={projectDuration}
+              min={1}
               onChange={(e) =>
                 updateProjectOverview("projectDuration", e.target.value)
               }
@@ -109,6 +113,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateProjectOverview("location", e.target.value)
               }
+              maxLength={40}
               className="inputClass"
               required
             />
@@ -149,6 +154,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               type="text"
               id="targetBeneficiaries"
               value={targetBeneficiaries}
+              maxLength={200}
               onChange={(e) =>
                 updateProjectOverview("targetBeneficiaries", e.target.value)
               }
@@ -167,6 +173,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateProjectOverview("problemStatement", e.target.value)
               }
+              maxLength={1000}
               className="inputClass resize-none"
               required
               placeholder="Describe the challenges this project addresses..."

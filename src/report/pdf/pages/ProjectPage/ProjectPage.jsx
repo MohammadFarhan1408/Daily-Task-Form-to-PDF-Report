@@ -29,37 +29,29 @@ export const ProjectPage = () => {
         {/* Main Title Section */}
         <View style={styles.titleCard}>
           <Text style={styles.label}>PROJECT TITLE</Text>
-          <Text style={styles.mainTitle}>
-            {projectTitle || "AI and Robotics Lab Implementation"}
-          </Text>
+          <Text style={styles.mainTitle}>{projectTitle}</Text>
         </View>
 
         {/* Details Grid */}
         <View style={styles.infoGrid}>
           <View style={styles.gridItem}>
             <Text style={styles.smallLabel}>IMPLEMENTING ORGANIZATION</Text>
-            <Text style={styles.valueText}>
-              {implementingOrganization || "ISTEM Collective Foundation"}
-            </Text>
+            <Text style={styles.valueText}>{implementingOrganization}</Text>
           </View>
           <View style={styles.gridItem}>
             <Text style={styles.smallLabel}>PARTNER / SPONSOR</Text>
-            <Text style={styles.valueText}>
-              {partnerSponsor || "Haitian Huayuan Machinery (India) Pvt Ltd"}
-            </Text>
+            <Text style={styles.valueText}>{partnerSponsor}</Text>
           </View>
         </View>
 
         <View style={styles.infoGrid}>
           <View style={styles.gridItem}>
             <Text style={styles.smallLabel}>LOCATION</Text>
-            <Text style={styles.valueText}>
-              {location || "Mehsana, Gujarat"}
-            </Text>
+            <Text style={styles.valueText}>{location}</Text>
           </View>
           <View style={styles.gridItem}>
             <Text style={styles.smallLabel}>PROJECT DURATION</Text>
-            <Text style={styles.valueText}>{projectDuration || "—"}</Text>
+            <Text style={styles.valueText}>{projectDuration} Months</Text>
             <Text style={styles.dateRange}>
               {formatDate(startDate)} to {formatDate(endDate)}
             </Text>

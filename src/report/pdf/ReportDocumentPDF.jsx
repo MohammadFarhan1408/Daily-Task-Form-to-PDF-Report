@@ -24,6 +24,12 @@ import { MonitoringEvaluationPage } from "./pages/MonitoringEvaluationPage/Monit
 import { PhotographsPage } from "./pages/PhotographsPage/PhotographsPage";
 import { BackPage } from "./pages/BackPage/BackPage";
 import { SustainabilityPage } from "./pages/SustainabilityPage/SustainabilityPage";
+import { BeneficiaryAndBaselinePage } from "./pages/BeneficiaryAndBaselinePage/BeneficiaryAndBaselinePage";
+import { QuantitativeAndQualitativeImpactPage } from "./pages/QuantitativeAndQualitativeImpactPage/QuantitativeAndQualitativeImpactPage";
+import { LearningAndInstitutionalImpactPage } from "./pages/LearningAndInstitutionalImpactPage/LearningAndInstitutionalImpactPage";
+import { SocialAndInnovationImpactPage } from "./pages/SocialAndInnovationImpactPage/SocialAndInnovationImpactPage";
+import { CaseStudiesAndChallengesPage } from "./pages/CaseStudiesAndChallengesPage/CaseStudiesAndChallengesPage";
+import { SustainabilityAndMonitoringPage } from "./pages/SustainabilityAndMonitoringPage/SustainabilityAndMonitoringPage";
 
 const isEmptyText = (text) => !text || text.trim() === "";
 
@@ -49,19 +55,25 @@ const ReportDocumentPDF = ({ data }) => {
       <SummaryPage />
       <ProjectPage />
       <ObjectivesPage />
-      <BeneficiaryProfilePage />
+      <BeneficiaryAndBaselinePage />
+      <QuantitativeAndQualitativeImpactPage />
+      <LearningAndInstitutionalImpactPage />
+      <SocialAndInnovationImpactPage />
+      <CaseStudiesAndChallengesPage />
+      <SustainabilityAndMonitoringPage />
+      {!hideEconomic && <EconomicImpactPage />}
+      {/* <BeneficiaryProfilePage />
       <BaselineEndlinePage />
       <QuantitativeImpactPage />
       <QualitativeImpactPage />
       <LearningOutcomesPage />
       <InstitutionalImpactPage />
       <SocialImpactPage />
-      {!hideEconomic && <EconomicImpactPage />}
       <InnovationImpactPage />
       <CaseStudyPage />
       <ChallengesPage />
       <SustainabilityPage />
-      <MonitoringEvaluationPage />
+      <MonitoringEvaluationPage /> */}
       <PhotographsPage />
       <BackPage />
     </Document>

@@ -24,7 +24,6 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
         }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Key Challenges */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="keyChallenges">
               Key Challenges
@@ -37,12 +36,12 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateChallengesAndLearnings("keyChallenges", e.target.value)
               }
               required
+              maxLength={210}
               className="inputClass resize-none"
               placeholder="Describe key challenges..."
             />
           </div>
 
-          {/* Mitigation Strategies */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="mitigationStrategies">
               Mitigation Strategies
@@ -58,12 +57,12 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 )
               }
               required
+              maxLength={210}
               className="inputClass resize-none"
               placeholder="Describe mitigation strategies..."
             />
           </div>
 
-          {/* Lessons Learned */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="lessonsLearned">
               Lessons Learned
@@ -76,6 +75,7 @@ const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateChallengesAndLearnings("lessonsLearned", e.target.value)
               }
               required
+              maxLength={175}
               className="inputClass resize-none"
               placeholder="Enter lessons learned..."
             />

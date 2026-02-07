@@ -50,6 +50,7 @@ const QuantitativeImpactForm = ({
                   Number(e.target.value),
                 )
               }
+              min={1}
               required
               className="inputClass"
             />
@@ -71,6 +72,7 @@ const QuantitativeImpactForm = ({
                   Number(e.target.value),
                 )
               }
+              min={1}
               required
               className="inputClass"
             />
@@ -92,6 +94,8 @@ const QuantitativeImpactForm = ({
                   Number(e.target.value),
                 )
               }
+              min={1}
+              max={100}
               required
               className="inputClass"
             />
@@ -113,6 +117,8 @@ const QuantitativeImpactForm = ({
                   Number(e.target.value),
                 )
               }
+              min={1}
+              max={100}
               required
               className="inputClass"
             />
@@ -134,6 +140,8 @@ const QuantitativeImpactForm = ({
                   Number(e.target.value),
                 )
               }
+              min={1}
+              max={100}
               required
               className="inputClass"
             />

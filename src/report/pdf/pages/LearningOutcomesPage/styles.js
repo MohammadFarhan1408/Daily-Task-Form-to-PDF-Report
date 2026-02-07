@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     marginBottom: 6,
   },
   heroValue: {
-    fontSize: 32,
+    fontSize: 28,
     fontFamily: "Helvetica-Bold",
     color: "#ffffff",
   },

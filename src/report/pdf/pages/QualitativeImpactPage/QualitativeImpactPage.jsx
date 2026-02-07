@@ -11,19 +11,20 @@ export const QualitativeImpactPage = () => {
     leadershipSkills,
     teamwork,
     criticalThinking,
+    testimonials,
   } = useReportStore((state) => state.qualitativeImpact || {});
 
   return (
     <Page size="A4" style={styles.page}>
       <PDFHeader title="Qualitative Impact & Behavioral Change" />
 
-      <View style={styles.introBox}>
+      {/* <View style={styles.introBox}>
         <Text style={styles.introText}>
           Beyond numerical data, the project has fostered significant behavioral
           shifts and interpersonal growth among beneficiaries, aligning with
           holistic learning objectives.
         </Text>
-      </View>
+      </View> */}
 
       <View style={styles.grid}>
         {/* Confidence & Leadership Row */}
@@ -69,12 +70,21 @@ export const QualitativeImpactPage = () => {
         </View>
       </View>
 
-      <View style={styles.observationNote}>
+      {/* Impact Summary Note */}
+      <View style={styles.summaryNote}>
+        <Text style={styles.summaryTitle}>Feedback</Text>
+        <Text style={styles.summaryText}>
+          {testimonials ||
+            "A positive percentage change indicates improvement in proficiency, infrastructure utilization, or beneficiary engagement post-intervention."}
+        </Text>
+      </View>
+
+      {/* <View style={styles.observationNote}>
         <Text style={styles.noteText}>
           * Assessment is based on qualitative observations by trained educators
           and post-intervention feedback sessions.
         </Text>
-      </View>
+      </View> */}
 
       <PDFFooter />
     </Page>

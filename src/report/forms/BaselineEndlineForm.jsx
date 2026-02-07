@@ -53,17 +53,17 @@ const BaselineEndlineForm = ({
         <div className="overflow-x-auto">
           <table className="w-full border border-gray-200 rounded-lg">
             <thead>
-              <tr className="bg-gray-100 text-left">
-                <th className="p-3 border">Parameter</th>
-                <th className="p-3 border">Baseline Value</th>
-                <th className="p-3 border">Endline Value</th>
-                <th className="p-3 border">% Change</th>
+              <tr className="bg-gray-200 text-left">
+                <th className="p-3">Parameter</th>
+                <th className="p-3">Baseline Value</th>
+                <th className="p-3">Endline Value</th>
+                <th className="p-3">% Change</th>
               </tr>
             </thead>
 
             <tbody>
               <tr>
-                <td className="p-3 border">
+                <td className="p-3 ">
                   <input
                     type="text"
                     value={parameter || ""}
@@ -71,11 +71,12 @@ const BaselineEndlineForm = ({
                       updateBaselineEndline("parameter", e.target.value)
                     }
                     required
-                    className="inputClass"
+                    maxLength={45}
+                    className="inputClass "
                   />
                 </td>
 
-                <td className="p-3 border">
+                <td className="p-3">
                   <input
                     type="number"
                     value={baselineValue}
@@ -90,7 +91,7 @@ const BaselineEndlineForm = ({
                   />
                 </td>
 
-                <td className="p-3 border">
+                <td className="p-3">
                   <input
                     type="number"
                     value={endlineValue}
@@ -105,7 +106,7 @@ const BaselineEndlineForm = ({
                   />
                 </td>
 
-                <td className="p-3 border">
+                <td className="p-3">
                   <input
                     type="number"
                     value={calculatedPercent}

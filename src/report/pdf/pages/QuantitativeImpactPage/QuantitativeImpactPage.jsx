@@ -95,12 +95,12 @@ export const QuantitativeImpactPage = () => {
         </View>
 
         {/* Footnote */}
-        <View style={styles.footerNote}>
+        {/* <View style={styles.footerNote}>
           <Text style={styles.noteText}>
             * Data verified through attendance logs, project completion
             assessments, and teacher feedback.
           </Text>
-        </View>
+        </View> */}
       </View>
 
       <PDFFooter />

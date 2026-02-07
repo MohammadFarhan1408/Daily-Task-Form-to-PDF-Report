@@ -13,7 +13,7 @@ const PhotographsForm = ({ prevStep, isLastStep, generatePDF }) => {
       alert("Please upload at least one photograph.");
       return;
     }
-
+    // console.log(photographs);
     if (isLastStep) {
       generatePDF();
     }

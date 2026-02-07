@@ -71,13 +71,13 @@ export const EconomicImpactPage = () => {
       </View>
 
       {/* Sustainability Disclaimer */}
-      <View style={styles.footerNote}>
+      {/* <View style={styles.footerNote}>
         <Text style={styles.noteText}>
           * ROI and Cost calculations are based on project implementation
           expenses versus estimated market value of skills acquired by
           beneficiaries.
         </Text>
-      </View>
+      </View> */}
 
       <PDFFooter />
     </Page>

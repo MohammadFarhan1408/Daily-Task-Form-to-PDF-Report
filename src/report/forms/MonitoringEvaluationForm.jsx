@@ -29,7 +29,6 @@ const MonitoringEvaluationForm = ({
         }}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Data Collection Tools */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="dataCollectionTools">
               Data Collection Tools
@@ -44,13 +43,13 @@ const MonitoringEvaluationForm = ({
                   e.target.value,
                 )
               }
+              maxLength={180}
               required
               className="inputClass resize-none"
               placeholder="e.g. Surveys, Interviews, Observation Sheets..."
             />
           </div>
 
-          {/* Assessment Methods */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="assessmentMethods">
               Assessment Methods
@@ -63,12 +62,12 @@ const MonitoringEvaluationForm = ({
                 updateMonitoringEvaluation("assessmentMethods", e.target.value)
               }
               required
+              maxLength={180}
               className="inputClass resize-none"
               placeholder="e.g. Pre/Post Tests, Practical Evaluations..."
             />
           </div>
 
-          {/* Monitoring Frequency */}
           <div className="md:col-span-2">
             <label className="labelClass" htmlFor="monitoringFrequency">
               Monitoring Frequency
@@ -84,6 +83,7 @@ const MonitoringEvaluationForm = ({
                 )
               }
               required
+              maxLength={175}
               className="inputClass resize-none"
               placeholder="e.g. Weekly, Monthly, Quarterly..."
             />

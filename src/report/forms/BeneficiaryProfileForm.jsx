@@ -47,6 +47,7 @@ const BeneficiaryProfileForm = ({
               onChange={(e) =>
                 updateBeneficiaryProfile("totalBeneficiaries", e.target.value)
               }
+              min={1}
               required
               className="inputClass"
             />
@@ -66,6 +67,7 @@ const BeneficiaryProfileForm = ({
               }
               required
               className="inputClass"
+              placeholder="eg. 16-24 Years"
             />
           </div>
 
@@ -83,6 +85,7 @@ const BeneficiaryProfileForm = ({
                     female: e.target.value,
                   })
                 }
+                max={100}
                 required
                 className="inputClass"
               />
@@ -97,6 +100,7 @@ const BeneficiaryProfileForm = ({
                     male: e.target.value,
                   })
                 }
+                max={100}
                 required
                 className="inputClass"
               />
@@ -111,6 +115,7 @@ const BeneficiaryProfileForm = ({
                     other: e.target.value,
                   })
                 }
+                max={100}
                 required
                 className="inputClass"
               />
@@ -129,6 +134,7 @@ const BeneficiaryProfileForm = ({
               onChange={(e) =>
                 updateBeneficiaryProfile("educationBackground", e.target.value)
               }
+              maxLength={50}
               required
               className="inputClass"
             />
@@ -149,6 +155,7 @@ const BeneficiaryProfileForm = ({
                   e.target.value,
                 )
               }
+              maxLength={50}
               required
               className="inputClass"
             />
@@ -158,16 +165,17 @@ const BeneficiaryProfileForm = ({
             <label className="labelClass" htmlFor="geographicCoverage">
               Geographic Coverage
             </label>
-            <textarea
-              rows="4"
+            <input
+              type="text"
               id="geographicCoverage"
               name="geographicCoverage"
               value={geographicCoverage}
               onChange={(e) =>
                 updateBeneficiaryProfile("geographicCoverage", e.target.value)
               }
+              maxLength={100}
               required
-              className="inputClass resize-none"
+              className="inputClass"
             />
           </div>
         </div>

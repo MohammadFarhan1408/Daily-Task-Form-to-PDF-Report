@@ -43,6 +43,7 @@ const SustainabilityForm = ({
                 updateSustainability("continuationPlan", e.target.value)
               }
               required
+              maxLength={225}
               className="textareaClass"
               placeholder="Describe how the project will continue..."
             />
@@ -62,6 +63,7 @@ const SustainabilityForm = ({
                 updateSustainability("scalabilityPotential", e.target.value)
               }
               required
+              maxLength={225}
               className="textareaClass"
               placeholder="Explain potential for scaling..."
             />
@@ -81,6 +83,7 @@ const SustainabilityForm = ({
                 updateSustainability("replicationPossibilities", e.target.value)
               }
               required
+              maxLength={190}
               className="textareaClass"
               placeholder="Mention how this model can be replicated..."
             />

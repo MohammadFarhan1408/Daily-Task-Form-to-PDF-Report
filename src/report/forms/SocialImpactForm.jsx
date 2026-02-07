@@ -29,18 +29,19 @@ const SocialImpactForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
           {/* Inclusion & Equity */}
-          <div>
+          <div className="md:col-span-2">
             <label className="labelClass" htmlFor="inclusionAndEquity">
               Inclusion & Equity
             </label>
-            <textarea
+            <input
+              type="text"
               id="inclusionAndEquity"
               name="inclusionAndEquity"
-              rows={3}
               value={inclusionAndEquity}
               onChange={(e) =>
                 updateSocialImpact("inclusionAndEquity", e.target.value)
               }
+              maxLength={80}
               required
               className="textareaClass"
               placeholder="Describe inclusion and equity impact..."
@@ -48,18 +49,19 @@ const SocialImpactForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           </div>
 
           {/* Community Engagement */}
-          <div>
+          <div className="md:col-span-2">
             <label className="labelClass" htmlFor="communityEngagement">
               Community Engagement
             </label>
-            <textarea
+            <input
+              type="text"
               id="communityEngagement"
               name="communityEngagement"
-              rows={3}
               value={communityEngagement}
               onChange={(e) =>
                 updateSocialImpact("communityEngagement", e.target.value)
               }
+              maxLength={80}
               required
               className="textareaClass"
               placeholder="Describe community participation or outreach..."
@@ -67,7 +69,7 @@ const SocialImpactForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
           </div>
 
           {/* Awareness Programs */}
-          <div>
+          <div className="md:col-span-2">
             <label className="labelClass" htmlFor="awarenessPrograms">
               Awareness Programs
             </label>
@@ -80,13 +82,14 @@ const SocialImpactForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateSocialImpact("awarenessPrograms", e.target.value)
               }
               required
+              maxLength={120}
               className="textareaClass"
               placeholder="Mention campaigns, workshops, or seminars..."
             />
           </div>
 
           {/* Digital Divide Reduction */}
-          <div>
+          <div className="md:col-span-2">
             <label className="labelClass" htmlFor="digitalDivideReduction">
               Digital Divide Reduction
             </label>
@@ -99,6 +102,7 @@ const SocialImpactForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
                 updateSocialImpact("digitalDivideReduction", e.target.value)
               }
               required
+              maxLength={120}
               className="textareaClass"
               placeholder="Explain how digital access improved..."
             />

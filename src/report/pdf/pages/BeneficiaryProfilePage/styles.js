@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     color: "#94a3b8",
   },
   statValue: {
-    fontSize: 32,
+    fontSize: 28,
     fontFamily: "Helvetica-Bold",
   },
   statValueSmall: {

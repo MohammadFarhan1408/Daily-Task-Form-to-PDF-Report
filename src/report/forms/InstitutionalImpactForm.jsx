@@ -49,6 +49,7 @@ const InstitutionalImpactForm = ({
                 )
               }
               required
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Describe teacher training and capacity building..."
             />
@@ -67,6 +68,7 @@ const InstitutionalImpactForm = ({
                 updateInstitutionalImpact("infrastructureUse", e.target.value)
               }
               required
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Describe infrastructure utilization..."
             />
@@ -88,6 +90,7 @@ const InstitutionalImpactForm = ({
                 )
               }
               required
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Describe curriculum improvements..."
             />
@@ -109,6 +112,7 @@ const InstitutionalImpactForm = ({
                 )
               }
               required
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Describe sustainability measures..."
             />

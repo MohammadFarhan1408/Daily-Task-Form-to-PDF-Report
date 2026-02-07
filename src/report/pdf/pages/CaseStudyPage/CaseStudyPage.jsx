@@ -72,7 +72,7 @@ export const CaseStudyPage = () => {
               ”
             </Text>
           </View>
-          <Text style={styles.testimonialAuthor}>— Project Beneficiary</Text>
+          {/* <Text style={styles.testimonialAuthor}>— Project Beneficiary</Text> */}
         </View>
       </View>
 

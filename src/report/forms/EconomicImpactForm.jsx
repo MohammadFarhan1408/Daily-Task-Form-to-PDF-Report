@@ -57,6 +57,7 @@ const EconomicImpactForm = ({
               onChange={(e) =>
                 updateEconomicImpact("employabilityEnhancement", e.target.value)
               }
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Describe employability improvements..."
             />
@@ -72,6 +73,7 @@ const EconomicImpactForm = ({
               onChange={(e) =>
                 updateEconomicImpact("incomeOpportunities", e.target.value)
               }
+              maxLength={200}
               className="inputClass resize-none"
               placeholder="Describe income opportunities..."
             />
@@ -88,6 +90,7 @@ const EconomicImpactForm = ({
                 const v = e.target.value;
                 updateEconomicImpact("costPerBeneficiary", v === "" ? "" : v);
               }}
+              min={1}
               className="inputClass"
               placeholder="Enter amount"
             />
@@ -104,6 +107,7 @@ const EconomicImpactForm = ({
                 const v = e.target.value;
                 updateEconomicImpact("roi", v === "" ? "" : v);
               }}
+              min={1}
               className="inputClass"
               placeholder="Enter ROI %"
             />

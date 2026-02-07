@@ -149,17 +149,12 @@ const QualitativeImpactForm = ({
             <textarea
               id="testimonials"
               name="testimonials"
-              value={(testimonials || []).join("\n")}
+              value={testimonials}
               onChange={(e) =>
-                updateQualitativeImpact(
-                  "testimonials",
-                  e.target.value
-                    .split("\n")
-                    .map((t) => t.trim())
-                    .filter(Boolean),
-                )
+                updateQualitativeImpact("testimonials", e.target.value)
               }
-              rows={4}
+              rows={3}
+              maxLength={200}
               required
               className="textareaClass"
               placeholder="Write feedback or testimonial..."

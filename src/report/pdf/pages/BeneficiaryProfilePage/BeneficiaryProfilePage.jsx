@@ -54,7 +54,10 @@ export const BeneficiaryProfilePage = () => {
         </View>
         <View style={styles.sideStatBox}>
           <Text style={styles.statLabel}>PRIMARY AGE GROUP</Text>
-          <Text style={styles.statValueSmall}>{ageGroup}</Text>
+          <Text style={styles.statValueSmall}>
+            {ageGroup.toLowerCase().replace("years", "").replace("year", "")}{" "}
+            Years
+          </Text>
         </View>
       </View>
 
