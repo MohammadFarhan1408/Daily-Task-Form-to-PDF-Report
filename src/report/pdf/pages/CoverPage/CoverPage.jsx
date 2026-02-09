@@ -3,8 +3,11 @@ import { Page, Text, View, Image } from "@react-pdf/renderer";
 import { styles } from "./styles";
 import STEMbotixLogo from "@/assets/images/STEMbotix-Logo.png";
 import HaitianLogo from "@/assets/images/Haitian-Logo.jpg";
+import { useReportStore } from "@/store/reportStore";
 
-export const CoverPage = ({ data }) => {
+export const CoverPage = () => {
+  const projectTitle = useReportStore((state) => state.projectTitle);
+
   return (
     <Page size="A4" style={styles.page}>
       <View style={styles.logoContainer}>
@@ -16,9 +19,7 @@ export const CoverPage = ({ data }) => {
         <View style={styles.accentBar} />
 
         <Text style={styles.reportType}>IMPACT ANALYSIS REPORT</Text>
-        <Text style={styles.title}>
-          {data?.projectTitle || "Project Impact Assessment"}
-        </Text>
+        <Text style={styles.title}>{projectTitle}</Text>
 
         <View style={styles.subtitleContainer}>
           <Text style={styles.subtitle}>

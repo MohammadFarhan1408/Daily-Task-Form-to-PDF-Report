@@ -6,23 +6,24 @@ import PDFFooter from "../../components/PDFFooter";
 
 export const TableOfContentsPage = () => {
   const tocData = [
-    { title: "1. Project Overview", page: "3" },
-    { title: "2. Objectives & Intended Outcomes", page: "4" },
-    { title: "3. Beneficiary Profile", page: "5" },
-    { title: "4. Baseline vs Endline Comparison", page: "6" },
-    { title: "5. Quantitative Impact", page: "7" },
-    { title: "6. Qualitative Impact", page: "8" },
-    { title: "7. Learning & Skill Outcomes", page: "9" },
-    { title: "8. Institutional / Ecosystem Impact", page: "10" },
-    { title: "9. Social Impact", page: "11" },
-    { title: "10. Economic Impact (If Applicable)", page: "12" },
-    { title: "11. Innovation & Technology Impact", page: "13" },
-    { title: "12. Case Studies / Success Stories", page: "14" },
-    { title: "13. Challenges & Learnings", page: "15" },
-    { title: "14. Sustainability & Scalability", page: "16" },
-    { title: "15. Monitoring & Evaluation Methodology", page: "17" },
-    { title: "16. Conclusion & Way Forward", page: "18" },
-    { title: "17. Photographs", page: "19" },
+    { title: "1. Summary", page: "3" },
+    { title: "2. Project Overview", page: "3" },
+    { title: "3. Objectives & Intended Outcomes", page: "4" },
+    {
+      title: "4. Beneficiary Profile And Baseline vs Endline Comparison",
+      page: "5",
+    },
+    { title: "5. Quantitative And Qualitative Impact", page: "7" },
+    {
+      title:
+        "6. Learning & Skill Outcomes And Institutional / Ecosystem Impact",
+      page: "9",
+    },
+    { title: "7. Social And Innovation & Technology Impact", page: "11" },
+    { title: "8. Economic Impact (If Applicable)", page: "12" },
+    { title: "9. Case Studies And Challenges & Learnings", page: "14" },
+    { title: "10. Sustainability & Monitoring", page: "16" },
+    { title: "11. Photographs", page: "19" },
   ];
 
   return (

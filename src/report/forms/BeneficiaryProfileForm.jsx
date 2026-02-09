@@ -82,37 +82,46 @@ const BeneficiaryProfileForm = ({
                 type="number"
                 placeholder="From"
                 className="inputClass"
+                required
                 value={ageGroup?.split("-")[0] || ""}
                 onChange={(e) => {
                   const from = e.target.value;
-                  const to =
-                    ageGroup?.split("-")[1]?.replace(" Years", "") || "";
+                  const to = ageGroup?.split("-")[1] || "";
+                  updateBeneficiaryProfile(
+                    "ageGroup",
+                    `${from || ""}-${to || ""}`,
+                  );
+                }}
+                onBlur={() => {
+                  const from = ageGroup?.split("-")[0];
+                  const to = ageGroup?.split("-")[1];
 
-                  if (to && Number(from) > Number(to)) return;
-
-                  if (from && to) {
-                    updateBeneficiaryProfile("ageGroup", `${from}-${to}`);
-                  } else {
-                    updateBeneficiaryProfile("ageGroup", "");
+                  if (from && to && Number(from) > Number(to)) {
+                    alert("From must be less than To");
+                    updateBeneficiaryProfile("ageGroup", `-${to || ""}`);
                   }
                 }}
               />
-
               <input
                 type="number"
                 placeholder="To"
                 className="inputClass"
-                value={ageGroup?.split("-")[1]?.replace(" Years", "") || ""}
+                required
+                value={ageGroup?.split("-")[1] || ""}
                 onChange={(e) => {
                   const to = e.target.value;
                   const from = ageGroup?.split("-")[0] || "";
-
-                  if (from && Number(to) < Number(from)) return;
-
-                  if (from && to) {
-                    updateBeneficiaryProfile("ageGroup", `${from}-${to}`);
-                  } else {
-                    updateBeneficiaryProfile("ageGroup", "");
+                  updateBeneficiaryProfile(
+                    "ageGroup",
+                    `${from || ""}-${to || ""}`,
+                  );
+                }}
+                onBlur={() => {
+                  const from = ageGroup?.split("-")[0];
+                  const to = ageGroup?.split("-")[1];
+                  if (from && to && Number(to) < Number(from)) {
+                    alert("To must be greater than From");
+                    updateBeneficiaryProfile("ageGroup", `${from || ""}-`);
                   }
                 }}
               />

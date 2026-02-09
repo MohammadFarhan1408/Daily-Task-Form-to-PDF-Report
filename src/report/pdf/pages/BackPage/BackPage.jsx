@@ -1,8 +1,7 @@
 import React from "react";
 import { Page, Text, View, Image } from "@react-pdf/renderer";
 import { styles } from "./styles";
-// Optional: If you want the logo on the back too
-import STEMbotixLogo from "../../../../assets/images/STEMbotix-Logo.png";
+import STEMbotixLogo from "@/assets/images/STEMbotix-Logo.png";
 
 export const BackPage = () => {
   return (
