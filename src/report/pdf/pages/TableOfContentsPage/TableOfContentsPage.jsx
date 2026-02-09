@@ -7,23 +7,22 @@ import PDFFooter from "../../components/PDFFooter";
 export const TableOfContentsPage = () => {
   const tocData = [
     { title: "1. Summary", page: "3" },
-    { title: "2. Project Overview", page: "3" },
-    { title: "3. Objectives & Intended Outcomes", page: "4" },
-    {
-      title: "4. Beneficiary Profile And Baseline vs Endline Comparison",
-      page: "5",
-    },
-    { title: "5. Quantitative And Qualitative Impact", page: "7" },
-    {
-      title:
-        "6. Learning & Skill Outcomes And Institutional / Ecosystem Impact",
-      page: "9",
-    },
-    { title: "7. Social And Innovation & Technology Impact", page: "11" },
-    { title: "8. Economic Impact (If Applicable)", page: "12" },
-    { title: "9. Case Studies And Challenges & Learnings", page: "14" },
-    { title: "10. Sustainability & Monitoring", page: "16" },
-    { title: "11. Photographs", page: "19" },
+    { title: "2. Project Overview", page: "4" },
+    { title: "3. Objectives & Intended Outcomes", page: "5" },
+    { title: "4. Beneficiary Profile", page: "6" },
+    { title: "5. Baseline vs Endline Comparison", page: "6" },
+    { title: "6. Qualitative Impact", page: "7" },
+    { title: "7. Quantitative Impact", page: "7" },
+    { title: "8. Learning & Skill Outcomes", page: "8" },
+    { title: "9. Institutional / Ecosystem Impact", page: "8" },
+    { title: "10. Social Impact", page: "9" },
+    { title: "11. Innovation & Technology Impact", page: "9" },
+    { title: "12. Economic Impact", page: "10" },
+    { title: "13. Case Studies / Success Stories", page: "11" },
+    { title: "14. Challenges & Learnings", page: "11" },
+    { title: "15. Sustainability & Scalability", page: "12" },
+    { title: "16. Monitoring & Evaluation Methodology", page: "12" },
+    { title: "17. Photographs", page: "13" },
   ];
 
   return (
