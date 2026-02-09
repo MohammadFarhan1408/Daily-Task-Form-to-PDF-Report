@@ -129,6 +129,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               onChange={(e) =>
                 updateProjectOverview("startDate", e.target.value)
               }
+              max={endDate}
               className="inputClass"
               required
             />
@@ -142,6 +143,7 @@ const ProjectForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
               id="endDate"
               value={endDate || ""}
               onChange={(e) => updateProjectOverview("endDate", e.target.value)}
+              min={startDate}
               className="inputClass"
               required
             />

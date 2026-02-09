@@ -2,6 +2,28 @@ import React from "react";
 import { useReportStore } from "@/store/reportStore";
 import FormNavigation from "./components/FormNavigation";
 
+const clampGenderValue = (field, value, current) => {
+  const numValue = Number(value) || 0;
+
+  const female = Number(current?.female) || 0;
+  const male = Number(current?.male) || 0;
+  const other = Number(current?.other) || 0;
+
+  let used = 0;
+
+  if (field === "female") used = male + other;
+  if (field === "male") used = female + other;
+  if (field === "other") used = female + male;
+
+  const maxAllowed = 100 - used;
+  const safeValue = Math.max(0, Math.min(numValue, maxAllowed));
+
+  return {
+    ...current,
+    [field]: safeValue,
+  };
+};
+
 const BeneficiaryProfileForm = ({
   nextStep,
   prevStep,
@@ -52,72 +74,114 @@ const BeneficiaryProfileForm = ({
               className="inputClass"
             />
           </div>
-
           <div>
-            <label className="labelClass" htmlFor="ageGroup">
-              Age Group
-            </label>
-            <input
-              type="text"
-              id="ageGroup"
-              name="ageGroup"
-              value={ageGroup}
-              onChange={(e) =>
-                updateBeneficiaryProfile("ageGroup", e.target.value)
-              }
-              required
-              className="inputClass"
-              placeholder="eg. 16-24 Years"
-            />
+            <label className="labelClass">Age Group</label>
+
+            <div className="flex gap-2">
+              <input
+                type="number"
+                placeholder="From"
+                className="inputClass"
+                value={ageGroup?.split("-")[0] || ""}
+                onChange={(e) => {
+                  const from = e.target.value;
+                  const to =
+                    ageGroup?.split("-")[1]?.replace(" Years", "") || "";
+
+                  if (to && Number(from) > Number(to)) return;
+
+                  if (from && to) {
+                    updateBeneficiaryProfile("ageGroup", `${from}-${to}`);
+                  } else {
+                    updateBeneficiaryProfile("ageGroup", "");
+                  }
+                }}
+              />
+
+              <input
+                type="number"
+                placeholder="To"
+                className="inputClass"
+                value={ageGroup?.split("-")[1]?.replace(" Years", "") || ""}
+                onChange={(e) => {
+                  const to = e.target.value;
+                  const from = ageGroup?.split("-")[0] || "";
+
+                  if (from && Number(to) < Number(from)) return;
+
+                  if (from && to) {
+                    updateBeneficiaryProfile("ageGroup", `${from}-${to}`);
+                  } else {
+                    updateBeneficiaryProfile("ageGroup", "");
+                  }
+                }}
+              />
+            </div>
           </div>
-
           <div>
-            <label className="labelClass">Gender Distribution</label>
+            <label className="labelClass">
+              Gender Distribution (Total = 100)
+            </label>
 
             <div className="grid grid-cols-3 gap-3">
               <input
                 type="number"
                 placeholder="Female"
+                className="inputClass"
                 value={genderDistribution?.female || ""}
                 onChange={(e) =>
-                  updateBeneficiaryProfile("genderDistribution", {
-                    ...genderDistribution,
-                    female: e.target.value,
-                  })
+                  updateBeneficiaryProfile(
+                    "genderDistribution",
+                    clampGenderValue(
+                      "female",
+                      e.target.value,
+                      genderDistribution,
+                    ),
+                  )
                 }
+                min={0}
                 max={100}
                 required
-                className="inputClass"
               />
 
               <input
                 type="number"
                 placeholder="Male"
+                className="inputClass"
                 value={genderDistribution?.male || ""}
                 onChange={(e) =>
-                  updateBeneficiaryProfile("genderDistribution", {
-                    ...genderDistribution,
-                    male: e.target.value,
-                  })
+                  updateBeneficiaryProfile(
+                    "genderDistribution",
+                    clampGenderValue(
+                      "male",
+                      e.target.value,
+                      genderDistribution,
+                    ),
+                  )
                 }
+                min={0}
                 max={100}
                 required
-                className="inputClass"
               />
 
               <input
                 type="number"
                 placeholder="Other"
+                className="inputClass"
                 value={genderDistribution?.other || ""}
                 onChange={(e) =>
-                  updateBeneficiaryProfile("genderDistribution", {
-                    ...genderDistribution,
-                    other: e.target.value,
-                  })
+                  updateBeneficiaryProfile(
+                    "genderDistribution",
+                    clampGenderValue(
+                      "other",
+                      e.target.value,
+                      genderDistribution,
+                    ),
+                  )
                 }
+                min={0}
                 max={100}
                 required
-                className="inputClass"
               />
             </div>
           </div>
