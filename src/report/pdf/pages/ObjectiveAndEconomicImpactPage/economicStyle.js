@@ -1,23 +1,16 @@
 import { StyleSheet } from "@react-pdf/renderer";
 
 export const styles = StyleSheet.create({
-  page: {
-    paddingTop: 40,
-    paddingBottom: 60,
-    paddingHorizontal: 40,
-    fontFamily: "Helvetica",
-    backgroundColor: "#FFFFFF",
-  },
   metricsRow: {
     flexDirection: "row",
-    gap: 15,
-    marginBottom: 30,
-    marginTop: 10,
+    marginBottom: 20,
+    gap: 10,
   },
   metricCard: {
     flex: 1,
     padding: 15,
     borderRadius: 8,
+    marginBottom: 10,
     border: "1pt solid #e2e8f0",
     backgroundColor: "#f8fafc",
     alignItems: "center",

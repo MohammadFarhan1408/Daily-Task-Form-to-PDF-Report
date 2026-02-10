@@ -9,13 +9,17 @@ import { styles as socialStyles } from "./socialStyles";
 export const SocialAndInnovationImpactPage = () => {
   return (
     <Page size="A4" style={socialStyles.page}>
-      <PDFHeader title="Social Impact" />
-      <SocialSection />
+      <View id="social-impact">
+        <PDFHeader title="Social Impact" />
+        <SocialSection />
+      </View>
 
       <View style={{ marginTop: 20 }} />
 
-      <PDFHeader title="Innovation & Technology Impact" />
-      <InnovationSection />
+      <View id="innovation-impact">
+        <PDFHeader title="Innovation & Technology Impact" />
+        <InnovationSection />
+      </View>
 
       <PDFFooter />
     </Page>

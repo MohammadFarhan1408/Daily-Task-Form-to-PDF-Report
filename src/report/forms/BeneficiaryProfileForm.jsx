@@ -109,7 +109,7 @@ const BeneficiaryProfileForm = ({
                     `${from || ""}-${to || ""}`,
                   );
                 }}
-                min={parseInt(ageGroup?.split("-")[0]) + 1}
+                min={parseInt(ageGroup?.split("-")[0]) + 1 || 0}
                 max={100}
               />
             </div>

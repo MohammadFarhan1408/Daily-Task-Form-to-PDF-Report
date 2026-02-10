@@ -9,10 +9,10 @@ export const TableOfContentsPage = () => {
   const economicImpact = useReportStore((state) => state.economicImpact);
 
   const isEconomicEmpty =
-    !economicImpact.employabilityEnhancement &&
-    !economicImpact.incomeOpportunities &&
-    !economicImpact.costPerBeneficiary &&
-    !economicImpact.roi;
+    !economicImpact?.employabilityEnhancement &&
+    !economicImpact?.incomeOpportunities &&
+    !economicImpact?.costPerBeneficiary &&
+    !economicImpact?.roi;
 
   const pageBlocks = [
     { items: [{ title: "Summary", target: "summary" }] },
@@ -24,6 +24,12 @@ export const TableOfContentsPage = () => {
         {
           title: "Objectives & Intended Outcomes",
           target: "objectives",
+        },
+        {
+          optional: true,
+          show: !isEconomicEmpty,
+          title: "Economic Impact",
+          target: "economic-impact",
         },
       ],
     },
@@ -37,8 +43,8 @@ export const TableOfContentsPage = () => {
 
     {
       items: [
-        { title: "Quantitative Impact", target: "quantitative-impact" },
         { title: "Qualitative Impact", target: "qualitative-impact" },
+        { title: "Quantitative Impact", target: "quantitative-impact" },
       ],
     },
 
@@ -65,13 +71,6 @@ export const TableOfContentsPage = () => {
       ],
     },
 
-    // OPTIONAL PAGE
-    {
-      optional: true,
-      show: !isEconomicEmpty,
-      items: [{ title: "Economic Impact", target: "economic-impact" }],
-    },
-
     {
       items: [
         { title: "Case Studies / Success Stories", target: "case-studies" },
@@ -92,21 +91,24 @@ export const TableOfContentsPage = () => {
     { items: [{ title: "Photographs", target: "photographs" }] },
   ];
 
-  const visibleBlocks = pageBlocks.filter(
-    (block) => !block.optional || block.show,
-  );
-
   const START_PAGE = 3;
   let INDEX_NUM = 1;
+
   return (
     <Page size="A4" style={styles.page} id="table-content">
       <PDFHeader title="Table of Contents" />
 
       <View style={styles.tocContainer}>
-        {visibleBlocks.map((block, blockIndex) => {
+        {pageBlocks.map((block, blockIndex) => {
           const pageNumber = START_PAGE + blockIndex;
 
-          return block.items.map((item, itemIndex) => (
+          const visibleItems = block.items.filter(
+            (item) => !item.optional || item.show,
+          );
+
+          if (visibleItems.length === 0) return null;
+
+          return visibleItems.map((item, itemIndex) => (
             <View key={`${blockIndex}-${itemIndex}`} style={styles.tocItem}>
               <Link src={`#${item.target}`} style={styles.tocText}>
                 {`${INDEX_NUM++}. ${item.title}`}

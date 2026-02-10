@@ -9,13 +9,17 @@ import { styles as sustainabilityStyles } from "./sustainabilityStyles";
 export const SustainabilityAndMonitoringPage = () => {
   return (
     <Page size="A4" style={sustainabilityStyles.page}>
-      <PDFHeader title="Sustainability & Scalability" />
-      <SustainabilitySection />
+      <View id="sustainability">
+        <PDFHeader title="Sustainability & Scalability" />
+        <SustainabilitySection />
+      </View>
 
       <View style={{ marginTop: 20 }} />
 
-      <PDFHeader title="Monitoring & Evaluation Methodology" />
-      <MonitoringSection />
+      <View id="monitoring-evaluation">
+        <PDFHeader title="Monitoring & Evaluation Methodology" />
+        <MonitoringSection />
+      </View>
 
       <PDFFooter />
     </Page>

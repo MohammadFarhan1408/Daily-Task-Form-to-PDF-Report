@@ -9,13 +9,12 @@ export const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   container: {
-    marginTop: 10,
     flexDirection: "column",
-    gap: 20,
   },
   sectionRow: {
     flexDirection: "row",
-    gap: 15,
+    marginBottom: 10,
+    gap: 10,
   },
   goalCard: {
     flex: 1,
@@ -84,7 +83,6 @@ export const styles = StyleSheet.create({
     color: "#64748b",
   },
   alignmentBox: {
-    marginTop: 10,
     padding: 15,
     backgroundColor: "#eff6ff",
     borderRadius: 8,

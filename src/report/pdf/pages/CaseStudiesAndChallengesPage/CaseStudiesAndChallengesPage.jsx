@@ -9,13 +9,17 @@ import PDFFooter from "../../components/PDFFooter";
 export const CaseStudiesAndChallengesPage = () => {
   return (
     <Page size="A4" style={caseStudyStyles.page}>
-      <PDFHeader title="Case Studies / Success Stories" />
-      <CaseStudiesSection />
+      <View id="case-studies">
+        <PDFHeader title="Case Studies / Success Stories" />
+        <CaseStudiesSection />
+      </View>
 
       <View style={{ marginTop: 20 }} />
 
-      <PDFHeader title="Challenges & Learnings" />
-      <ChallengesSection />
+      <View id="challenges-learning">
+        <PDFHeader title="Challenges & Learnings" />
+        <ChallengesSection />
+      </View>
 
       <PDFFooter />
     </Page>

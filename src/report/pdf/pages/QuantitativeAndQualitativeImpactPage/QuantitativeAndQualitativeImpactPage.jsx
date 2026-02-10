@@ -9,13 +9,17 @@ import { styles as qualitativeStyles } from "./quantitativeStyle";
 export const QuantitativeAndQualitativeImpactPage = () => {
   return (
     <Page size="A4" style={qualitativeStyles.page}>
-      <PDFHeader title="Qualitative Impact & Behavioral Change" />
-      <QualitativeSection />
+      <View id="qualitative-impact">
+        <PDFHeader title="Qualitative Impact & Behavioral Change" />
+        <QualitativeSection />
+      </View>
 
       <View style={{ marginTop: 20 }} />
 
-      <PDFHeader title="Quantitative Impact" />
-      <QuantitativeSection />
+      <View id="quantitative-impact">
+        <PDFHeader title="Quantitative Impact" />
+        <QuantitativeSection />
+      </View>
 
       <PDFFooter />
     </Page>

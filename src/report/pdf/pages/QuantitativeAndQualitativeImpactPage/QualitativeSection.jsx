@@ -13,7 +13,7 @@ const QuantitativeSection = () => {
   } = useReportStore((state) => state.quantitativeImpact || {});
 
   return (
-    <View style={styles.container} id="qualitative-impact">
+    <View style={styles.container}>
       <View style={styles.heroRow}>
         <View style={styles.heroBox}>
           <Text style={styles.heroLabel}>PARTICIPANTS TRAINED</Text>

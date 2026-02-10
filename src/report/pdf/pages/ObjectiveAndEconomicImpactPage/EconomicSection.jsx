@@ -1,11 +1,9 @@
 import React from "react";
 import { Page, Text, View } from "@react-pdf/renderer";
-import { styles } from "./styles";
+import { styles } from "./economicStyle";
 import { useReportStore } from "@/store/reportStore";
-import PDFFooter from "../../components/PDFFooter";
-import PDFHeader from "../../components/PDFHeader";
 
-export const EconomicImpactPage = () => {
+const EconomicSection = () => {
   const {
     employabilityEnhancement,
     incomeOpportunities,
@@ -14,9 +12,7 @@ export const EconomicImpactPage = () => {
   } = useReportStore((state) => state.economicImpact || {});
 
   return (
-    <Page size="A4" style={styles.page} id="economic-impact">
-      <PDFHeader title="Economic Impact" />
-
+    <>
       {/* Financial Metrics Row */}
       <View style={styles.metricsRow}>
         <View style={styles.metricCard}>
@@ -54,7 +50,7 @@ export const EconomicImpactPage = () => {
         </View>
 
         {/* Income Opportunities */}
-        <View style={[styles.infoBlock, { marginTop: 20 }]}>
+        <View style={[styles.infoBlock, { marginTop: 10 }]}>
           <View style={styles.iconHeader}>
             <View style={[styles.bullet, { backgroundColor: "#10b981" }]} />
             <Text style={styles.blockTitle}>
@@ -78,8 +74,8 @@ export const EconomicImpactPage = () => {
           beneficiaries.
         </Text>
       </View> */}
-
-      <PDFFooter />
-    </Page>
+    </>
   );
 };
+
+export default EconomicSection;
