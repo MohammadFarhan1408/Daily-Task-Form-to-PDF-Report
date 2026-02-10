@@ -31,7 +31,6 @@ const isEconomicImpactEmpty = (e) => {
 
 const ReportDocumentPDF = ({ data }) => {
   const hideEconomic = isEconomicImpactEmpty(data.economicImpact);
-
   return (
     <Document>
       <CoverPage />
@@ -43,9 +42,9 @@ const ReportDocumentPDF = ({ data }) => {
       <QuantitativeAndQualitativeImpactPage />
       <LearningAndInstitutionalImpactPage />
       <SocialAndInnovationImpactPage />
+      {!hideEconomic && <EconomicImpactPage />}
       <CaseStudiesAndChallengesPage />
       <SustainabilityAndMonitoringPage />
-      {!hideEconomic && <EconomicImpactPage />}
       <PhotographsPage />
       <BackPage />
     </Document>

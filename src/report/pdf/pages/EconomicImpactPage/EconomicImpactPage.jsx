@@ -14,7 +14,7 @@ export const EconomicImpactPage = () => {
   } = useReportStore((state) => state.economicImpact || {});
 
   return (
-    <Page size="A4" style={styles.page}>
+    <Page size="A4" style={styles.page} id="economic-impact">
       <PDFHeader title="Economic Impact" />
 
       {/* Financial Metrics Row */}

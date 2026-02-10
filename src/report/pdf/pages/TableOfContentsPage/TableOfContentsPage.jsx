@@ -3,7 +3,7 @@ import { View, Text, Page, Link } from "@react-pdf/renderer";
 import { styles } from "./styles";
 import PDFHeader from "../../components/PDFHeader";
 import PDFFooter from "../../components/PDFFooter";
-import { useReportStore } from "../../../../store/reportStore";
+import { useReportStore } from "@/store/reportStore";
 
 export const TableOfContentsPage = () => {
   const economicImpact = useReportStore((state) => state.economicImpact);
