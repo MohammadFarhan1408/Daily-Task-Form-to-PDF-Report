@@ -28,13 +28,12 @@
 }
 
 .textareaClass {
-  @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-xl
-         transition-all duration-200 ease-in-out
-         placeholder:text-gray-400 text-gray-700 text-sm
-         focus:ring-4 focus:ring-[#78D5D7]/20 focus:border-[#78D5D7] focus:outline-none
-         resize-none;
+  @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-xl transition-all duration-200 ease-in-out placeholder:text-gray-400 text-gray-700 text-sm focus:ring-4 focus:ring-[#78D5D7]/20 focus:border-[#78D5D7] focus:outline-none resize-none;
 }
 
+.fileInputClass {
+  @apply w-full text-slate-600 font-medium text-sm bg-gray-200 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded;
+}
 
 /* Specific styling for the form container if needed */
 .form-container {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BiEnvelope } from "react-icons/bi";
 import { useReportStore } from "@/store/reportStore";
-import FormNavigation from "./components/FormNavigation";
+import FormNavigation from "../navigation/FormNavigation";
 
 const ObjectivesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
   const {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useReportStore } from "@/store/reportStore";
-import FormNavigation from "./components/FormNavigation";
+import FormNavigation from "../navigation/FormNavigation";
 
 const ChallengesForm = ({ nextStep, prevStep, isLastStep, generatePDF }) => {
   const { keyChallenges, mitigationStrategies, lessonsLearned } =

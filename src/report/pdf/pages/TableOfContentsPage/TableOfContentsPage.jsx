@@ -1,8 +1,6 @@
 import React from "react";
 import { View, Text, Page, Link } from "@react-pdf/renderer";
 import { styles } from "./styles";
-import PDFHeader from "../../components/PDFHeader";
-import PDFFooter from "../../components/PDFFooter";
 import { useReportStore } from "@/store/reportStore";
 import PDFPageLayout from "../../components/PDFPageLayout";
 import SectionTitle from "../../components/SectionTitle";

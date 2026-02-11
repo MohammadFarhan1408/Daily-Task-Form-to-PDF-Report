@@ -1,6 +1,6 @@
 import React from "react";
 import { useReportStore } from "@/store/reportStore";
-import FormNavigation from "./components/FormNavigation";
+import FormNavigation from "../navigation/FormNavigation";
 
 const QuantitativeImpactForm = ({
   nextStep,

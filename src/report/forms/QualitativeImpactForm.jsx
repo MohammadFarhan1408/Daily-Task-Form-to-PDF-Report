@@ -1,7 +1,7 @@
 import React from "react";
 import { useReportStore } from "@/store/reportStore";
 import { FaAngleDown } from "react-icons/fa6";
-import FormNavigation from "./components/FormNavigation";
+import FormNavigation from "../navigation/FormNavigation";
 
 const QualitativeImpactForm = ({
   nextStep,

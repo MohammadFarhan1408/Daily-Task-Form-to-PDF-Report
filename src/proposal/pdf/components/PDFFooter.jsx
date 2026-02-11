@@ -165,8 +165,8 @@ const styles = StyleSheet.create({
     width: 65,
     height: 65,
     backgroundColor: "#FFF",
-    flexShrink: 0, // 🔴 MOST IMPORTANT
-    flexGrow: 0, // prevent expansion
+    flexShrink: 0,
+    flexGrow: 0,
     justifyContent: "center",
     alignItems: "center",
   },

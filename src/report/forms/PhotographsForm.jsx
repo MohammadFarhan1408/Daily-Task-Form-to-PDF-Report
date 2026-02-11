@@ -1,6 +1,6 @@
 import React from "react";
 import { useReportStore } from "@/store/reportStore";
-import FormNavigation from "./components/FormNavigation";
+import FormNavigation from "../navigation/FormNavigation";
 
 const PhotographsForm = ({ prevStep, isLastStep, generatePDF }) => {
   const photographs = useReportStore((state) => state.photographs);
@@ -13,10 +13,19 @@ const PhotographsForm = ({ prevStep, isLastStep, generatePDF }) => {
       alert("Please upload at least one photograph.");
       return;
     }
-    // console.log(photographs);
     if (isLastStep) {
       generatePDF();
     }
+  };
+
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files || []);
+    updatePhotographs(files);
+  };
+
+  const removeImage = (index) => {
+    const newPhotographs = photographs.filter((_, i) => i !== index);
+    updatePhotographs(newPhotographs);
   };
 
   return (
@@ -36,11 +45,36 @@ const PhotographsForm = ({ prevStep, isLastStep, generatePDF }) => {
             id="photographs"
             name="photographs"
             multiple
-            onChange={(e) => updatePhotographs(e.target.files)}
-            className="w-full text-slate-600 font-medium text-sm bg-gray-200 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded"
+            onChange={handleFileChange}
+            className="fileInputClass"
             required
           />
         </div>
+
+        {/* Preview Grid */}
+        {photographs && photographs.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {photographs.map((file, index) => (
+              <div
+                key={index}
+                className="relative border rounded-lg overflow-hidden"
+              >
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt={`Photographs ${index + 1}`}
+                  className="w-full h-32 object-cover"
+                />
+                <button
+                  type="button"
+                  onClick={() => removeImage(index)}
+                  className="absolute top-1 right-1 bg-red-600 text-white text-xs px-2 py-1 rounded"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Navigation */}
         <FormNavigation
