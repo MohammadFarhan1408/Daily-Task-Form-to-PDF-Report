@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useReportStore } from "../../store/reportStore";
-import ReportDocumentPDF from "../pdf/ReportDocumentPDF";
+// import ReportDocumentPDF from "../pdf/ReportDocumentPDF";
 
 import ProjectForm from "../forms/ProjectForm";
 import BaselineEndlineForm from "../forms/BaselineEndlineForm";
@@ -19,6 +19,8 @@ import QualitativeImpactForm from "../forms/QualitativeImpactForm";
 import QuantitativeImpactForm from "../forms/QuantitativeImpactForm";
 import SocialImpactForm from "../forms/SocialImpactForm";
 import SustainabilityForm from "../forms/SustainabilityForm";
+
+const ReportDocumentPDF = React.lazy(() => import("../pdf/ReportDocumentPDF"));
 
 const Stepper = () => {
   const [currentStep, setCurrentStep] = useState(0);

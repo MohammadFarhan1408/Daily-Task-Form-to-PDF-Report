@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import ProposalDocumentPDF from "../pdf/ProposalDocumentPDF";
+// import ProposalDocumentPDF from "../pdf/ProposalDocumentPDF";
 import { useProposalStore } from "@/store/proposalStore";
 import ProposalForm from "../froms/ProposalForm";
 import FinancialForm from "../froms/FinancialForm";
 import GalleryForm from "../froms/GalleryForm";
 import ProjectProposalForm from "../froms/ProjectProposalForm";
+
+const ProposalDocumentPDF = React.lazy(
+  () => import("../pdf/ProposalDocumentPDF"),
+);
 
 const Stepper = () => {
   const [currentStep, setCurrentStep] = useState(0);
