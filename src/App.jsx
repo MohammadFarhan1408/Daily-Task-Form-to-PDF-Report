@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProposalStepper from "./proposal/navigation/Stepper";
 import ReportStepper from "./report/navigation/Stepper";
+import DeliveryStepper from "./delivery/navigation/Stepper";
 
 const App = () => {
   const [mode, setMode] = useState(null); // "proposal" | "report" | null
@@ -41,8 +42,32 @@ const App = () => {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-blue-600 rounded-xl mb-6 flex items-center justify-center shadow-lg shadow-blue-200">
-                  <div className="w-6 h-1 bg-white rounded-full mb-1" />
-                  <div className="w-4 h-1 bg-white/60 rounded-full" />
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M7 3H14L19 8V21H7V3Z"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14 3V8H19"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9 12H15"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M9 16H13"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
                 </div>
 
                 <h2 className="text-2xl font-bold text-slate-800 mb-3">
@@ -71,9 +96,17 @@ const App = () => {
 
               <div className="relative z-10">
                 <div className="w-12 h-12 bg-emerald-600 rounded-xl mb-6 flex items-center justify-center shadow-lg shadow-emerald-200">
-                  <div className="w-5 h-5 border-2 border-white rounded-sm flex items-end p-0.5">
-                    <div className="w-1 h-2 bg-white" />
-                  </div>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 20H20"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <rect x="6" y="10" width="2.5" height="7" fill="white" />
+                    <rect x="11" y="7" width="2.5" height="10" fill="white" />
+                    <rect x="16" y="12" width="2.5" height="5" fill="white" />
+                  </svg>
                 </div>
 
                 <h2 className="text-2xl font-bold text-slate-800 mb-3">
@@ -92,11 +125,67 @@ const App = () => {
                 </div>
               </div>
             </div>
+
+            {/* Delivery OPTION */}
+            <div
+              onClick={() => setMode("delivery")}
+              className="group cursor-pointer bg-white border border-slate-200 rounded-2xl p-8 hover:border-red-500 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110" />
+
+              <div className="relative z-10">
+                <div className="w-12 h-12 bg-red-600 rounded-xl mb-6 flex items-center justify-center shadow-lg shadow-red-200">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="5"
+                      y="3"
+                      width="14"
+                      height="18"
+                      rx="2"
+                      stroke="white"
+                      stroke-width="2"
+                    />
+
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="4"
+                      stroke="white"
+                      stroke-width="1"
+                    />
+
+                    <path
+                      d="M10 12L11.4 13.4L14 10.8"
+                      stroke="white"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+
+                <h2 className="text-2xl font-bold text-slate-800 mb-3">
+                  Delivery Certificate
+                </h2>
+                {/* <p className="text-slate-500 leading-relaxed">
+                  Generate post-implementation summaries, assessment results,
+                  and impact analysis for completed projects.
+                </p> */}
+
+                <div className="mt-8 flex items-center text-red-600 font-bold text-sm">
+                  Generate Certificate{" "}
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="animate-in fade-in duration-700">
             {mode === "proposal" && <ProposalStepper />}
             {mode === "report" && <ReportStepper />}
+            {mode === "delivery" && <DeliveryStepper />}
           </div>
         )}
       </div>
