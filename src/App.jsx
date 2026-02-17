@@ -11,31 +11,33 @@ const App = () => {
     <div className="min-h-screen bg-slate-50 py-12 px-4 flex justify-center">
       <div className="w-full max-w-5xl">
         {/* HEADER SECTION */}
-        <div className="flex justify-between items-center mb-10">
-          <div className="">
-            <div className="flex items-center justify-center">
+        <div className="w-full mb-6">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            {/* LEFT SIDE — Logo + Title */}
+            <div className="flex items-center gap-3 justify-center md:justify-start">
               <img
                 src={logo}
                 alt="DocGen Logo"
-                className="w-40 md:h-15 md:w-auto mr-5"
+                className="w-40 md:h-15 md:w-auto object-contain mr-5"
               />
-              <h1 className="text-xl md:text-3xl mt-2 font-extrabold  text-blue-600 tracking-tight">
-                PDF Generator
-              </h1>
-            </div>
-            <p className="text-slate-500 text-sm mt-2">
-              Create Proposals, Reports, and Certificates with ease.
-            </p>
-          </div>
 
-          {mode && (
-            <button
-              onClick={() => setMode(null)}
-              className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-red-500 flex items-center transition-colors"
-            >
-              ← Switch Document Type
-            </button>
-          )}
+              <div>
+                <h1 className="text-xl md:text-3xl mt-2 font-extrabold text-blue-600 tracking-tight leading-tight">
+                  PDF Generator
+                </h1>
+              </div>
+            </div>
+
+            {/* RIGHT SIDE — Switch Button */}
+            {mode && (
+              <button
+                onClick={() => setMode(null)}
+                className="self-center md:self-auto text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-red-500 transition-colors"
+              >
+                ← Switch Document Type
+              </button>
+            )}
+          </div>
         </div>
 
         {/* MODE SELECT UI */}
